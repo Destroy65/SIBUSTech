@@ -1,28 +1,12 @@
 <?php
-    require_once __DIR__.'/../config.php';
-
-    class DBconnect{
-        private static $instance;
-        private $conn;
-        
-        private function __construct(){
-            try{
-                $this->conn = new \PDO(sprintf('mysql:dbname=%s;host=%s;charset=UTF8', DATABASE_NAME, DATABASE_HOST),
-                DATABASE_USER,
-                DATABASE_PASSWORD);
-            } catch (\PDOException $e){
-                echo sprintf('Connection failed: %s', $e->getMessage());
-                die;
-            }
+    require_once __DIR__."/../config.php";
+    function DBconnect(){
+        try{
+            $conn = new PDO("mysql:host=".DATABASE_HOST.";dbname=".DATABASE_NAME.";charset=UTF8", DATABASE_USER, DATABASE_PASSWORD);
+            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        }catch(PDOException $e){
+            echo "Error: ".$e->getMessage();
         }
-        public static function getInstance(): self{
-            if(self::$instance === null){
-                self::$instance = new self();
-            }
-            return self::$instance;
-        }
-        public static function conn(){
-            return self::getInstance()->conn;
-        }
+        return($conn);
     }
 ?>
