@@ -11,13 +11,19 @@
           $conn = DBconnect();
           $categories = getCategories($conn);
           foreach($categories as $category){
-            echo $category["id"]." esto otro xd: ".$category["name"]."<br />";
+            echo $category["name"]."<br />";
           }
         ?>
       </section>
       <section id="productsList" style="grid-area: productsList">
-          aaaa
+          aaaa <br />
+          aaaa <br />
+
+
       </section>
     </div>
-  </body>
+    <footer style="grid-area: footer">
+      esto es el footer
+    </footer>
+    </body>
 </html>

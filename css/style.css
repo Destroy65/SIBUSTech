@@ -4,28 +4,54 @@
     column-gap: 5px;
     row-gap: 5px;
     padding: 5px;
-    text-align: center;
     grid-template-areas: 
         'top_menu'
         'pp'
         'pp'
-        'pp';
+        'footer';
 }
 #pp{
     display: grid;
     background-color: blue;
+    vertical-align: middle;
+    column-gap: 5px;
+    row-gap: 5px;
+    padding: 5px;
     grid-template-areas: 
-    'categoriesList productsList productsList productsList';
+    'categoriesList productsList productsList productsList productsList productsList';
 }
 #top_menu{
     display: grid;
     background-color: blueviolet;
+    vertical-align: middle;
+    bottom: 0%;
     grid-template-areas: 
         'mainLogo  topnav topnav profile';
 }
+nav{
+    text-align: center;
+    vertical-align: middle;
+    padding: 5px;
+}
+#profile{
+    text-align: right;
+}
 #categoriesList{
     background-color: chartreuse;
+    vertical-align: middle;
+    padding: 5px;
+    column-gap: 5px;
+    row-gap: 5px;
 }
 #productsList{
     background-color: coral;
+    padding: 5px;
+    column-gap: 5px;
+    row-gap: 5px;
+}
+#mainLogo{
+    align-items: center;
+}
+footer{
+    background-color: lightpink;
 }

@@ -4,7 +4,7 @@
       <?php require __DIR__."/controller/top_menu.php"; ?>
     </header>
     <div>
-        esto es tu cuenta
+        esto es el carrito
     </div>  
   </body>
 </html>

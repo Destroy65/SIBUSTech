@@ -9,6 +9,9 @@
         case 'account':
             require __DIR__."/resource_account.php";
             break;
+        case 'cart':
+            require __DIR__."/resource_cart.php";
+            break;
         default:
             require __DIR__."/resource_main.php";
             break;

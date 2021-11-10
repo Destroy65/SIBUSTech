@@ -27,7 +27,7 @@
             <input type="text" placeholder="Poblacion" name="city" required>
 
             <label for="postal"><b>Codigo Postal</b></label>
-            <input type="text" placeholder="Codigo Postal" name="postal" required>
+            <input type="number" placeholder="Codigo Postal" name="postal" required>
         
             <label>
             <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
