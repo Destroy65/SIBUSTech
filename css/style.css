@@ -1,0 +1,31 @@
+#layout{
+    display: grid;
+    background-color: lightgray;
+    column-gap: 5px;
+    row-gap: 5px;
+    padding: 5px;
+    text-align: center;
+    grid-template-areas: 
+        'top_menu'
+        'pp'
+        'pp'
+        'pp';
+}
+#pp{
+    display: grid;
+    background-color: blue;
+    grid-template-areas: 
+    'categoriesList productsList productsList productsList';
+}
+#top_menu{
+    display: grid;
+    background-color: blueviolet;
+    grid-template-areas: 
+        'mainLogo  topnav topnav profile';
+}
+#categoriesList{
+    background-color: chartreuse;
+}
+#productsList{
+    background-color: coral;
+}
