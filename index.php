@@ -15,5 +15,5 @@
         default:
             require __DIR__."/resource_main.php";
             break;
-    }
+    } 
 ?>

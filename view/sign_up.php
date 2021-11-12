@@ -1,5 +1,5 @@
 <hmtl>
-    <form action="pene.php" method="post">
+    <form action="" method="post">
         <div class="sign_up">
             <h1>Sign Up</h1>
             <p>Please fill in this form to create an account.</p>
@@ -34,7 +34,7 @@
             </label>
 
             <div class="clearfix">
-            <button type="button" class="cancelbtn">Cancel</button>
+            <?php echo "<a href='".$_SERVER['PHP_SELF']."'><button type='button' class='cancelbtn'>Cancel</button></a>"; ?>
             <button type="submit" class="signupbtn">Sign Up</button>
             </div>
         </div>

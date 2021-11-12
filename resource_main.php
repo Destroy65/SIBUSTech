@@ -1,29 +1,21 @@
 <html>
   <body id="layout">
     <header id="top_menu" style="grid-area: top_menu">
-      <?php require __DIR__."/controller/top_menu.php"; ?>
+      <?php include __DIR__."/controller/top_menu.php"; ?>
     </header>
-    <div id="pp" style="grid-area: pp">
+    <div id="body" style="grid-area: body">
+      <div id="log_menu" class="modal">
+        <?php include __DIR__."/controller/log_menu.php"; ?>
+      </div>
       <section id="categoriesList" style="grid-area: categoriesList">
-        <?php
-          require __DIR__."/model/DBconnect.php";
-          require __DIR__."/model/categories.php";
-          $conn = DBconnect();
-          $categories = getCategories($conn);
-          foreach($categories as $category){
-            echo $category["name"]."<br />";
-          }
-        ?>
+        <?php include __DIR__."/controller/categories.php";?>
       </section>
       <section id="productsList" style="grid-area: productsList">
-          aaaa <br />
-          aaaa <br />
-
-
+        <?php include __DIR__."/controller/products.php";?>
       </section>
     </div>
     <footer style="grid-area: footer">
-      esto es el footer
+      <?php include __DIR__."/controller/footer.php";?>
     </footer>
-    </body>
+  </body>
 </html>

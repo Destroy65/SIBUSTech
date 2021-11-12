@@ -1,3 +1,3 @@
 <?php
-    require __DIR__."/../view/top_menu.php";
+    include __DIR__."/../view/top_menu.php";
 ?>
