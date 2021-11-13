@@ -1,31 +1,23 @@
 <?php
-    function verify_psw($psw, $expected)
-    {
-        $hashed = password_hash($psw, PASSWORD_DEFAULT);
-        return $hashed == $expected;
-    }
-    function TODO()
-    {
-        echo "TODO";
 
-
-    }
     function login($conn)
     {
-        $username = $_POST['username'];
-        $psw = $_POST['psw'];
-        $consulta = $conn->prepare("SELECT password FROM users WHERE username = :username");
-        $consulta->bindParam(":username", $username);
-        $result = $consulta->execute();
-       
-        if($result != false && $verify_psw($psw, $consulta) == true)
-        {
-            TODO();
+        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $username = $_POST['username'];
+            $psw = $_POST['psw'];
+            $consulta = $conn->prepare("SELECT password FROM users WHERE username = :username");
+            $consulta->bindParam(":username", $username);
+            $consulta->execute();
+            $result = $consulta->fetchAll(PDO::FETCH_ASSOC);
+            if(password_verify($psw, $result[0]['password']))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
-        else
-        {
-            echo "bad pasword or email";
-        }
-        $consulta->exit();
+        return true;
     }
 ?>

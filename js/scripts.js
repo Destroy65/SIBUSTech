@@ -1,14 +1,9 @@
-function validatePSW(str)
+const myInput = document.getElementById("s_psw");
+const myInput2 = document.getElementById("postal");
+const myInput3 = document.getElementById("s_email");
+const warnn = document.getElementById("warn");
+
+function validateForm()
 {
-    var input = str.getElementByid("algo");
-    var validate = input.value.match(/[\w\[\]`!@#$%\^&*()=:<>+]/);
-    if(input.value.lenght == validate.lenght && input.value.lenght>= 8)
-    {
-        console.log("ok");
-    }
-    else
-    {
-        console.log("not ok");
-    }
-    
+  return true;
 }

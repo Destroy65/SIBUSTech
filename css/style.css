@@ -1,4 +1,4 @@
-#layout{
+.layout{
     display: grid;
     background-color: lightgray;
     column-gap: 5px;
@@ -20,7 +20,7 @@
     grid-template-areas: 
     'categoriesList productsList productsList productsList productsList productsList';
 }
-#top_menu{
+.top_menu{
     display: grid;
     background-color: blueviolet;
     vertical-align: middle;

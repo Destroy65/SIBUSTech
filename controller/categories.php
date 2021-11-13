@@ -1,5 +1,5 @@
 <?php
-    require __DIR__."/../model/DBconnect.php";
+    require_once __DIR__."/../model/DBconnect.php";
     require __DIR__."/../model/categories.php";
     $conn = DBconnect();
     $categories = getCategories($conn);
