@@ -9,6 +9,6 @@
             $consulta->execute();
             $aux = $consulta->fetchAll(PDO::FETCH_ASSOC);
             return $aux;
-        }
+        }  
     }
 ?>

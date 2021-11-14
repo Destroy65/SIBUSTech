@@ -1,9 +1,9 @@
 <html>
     <div class="card">
-        <img src="test_logo.jpg" alt="Denim Jeans" style="width:100%">
-        <h1>Tailored Jeans</h1>
-        <p class="price">$19.99</p>
-        <p>Some text about the jeans..</p>
+        <h1><?php echo $aux['name'] ?></h1>
+        <img src='img/fuera_de_stock.jpg'>
+        <p><?php echo $aux['description'] ?> </p>
+        <p><b>PRECIO: <?php echo $aux['price'] ?>$ </b></p>
         <p><button>Add to Cart</button></p>
     </div>
 </html> 

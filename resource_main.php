@@ -10,9 +10,9 @@
       <section id="categoriesList" style="grid-area: categoriesList">
         <?php include __DIR__."/controller/categories.php";?>
       </section>
-      <section id="productsList" style="grid-area: productsList">
+      <div id="productsList" style="grid-area: productsList">
         <?php include __DIR__."/controller/products.php";?>
-      </section>
+    </div>
     </div>
     <footer style="grid-area: footer">
       <?php include __DIR__."/controller/footer.php";?>

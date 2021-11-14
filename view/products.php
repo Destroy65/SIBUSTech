@@ -1,19 +1,14 @@
+<div id="interior">
 <?php
     foreach($aux as $res)
     {
-        echo "<table>";
+        echo "<div><button onclick='return detailProduct(".$res['id'].");'><table>";
         echo "<tr>";
-        echo "<th>CustomerID</th>";
-        echo "<td>" .$res['id'] . "</td>";
-        echo "<th>CompanyName</th>";
-        echo "<td>" . $res['name'] . "</td>";
-        echo "<th>Descripciomes</th>";
-        echo "<td>" . $res['description'] . "</td>";
-        echo "<th>Imagen</th>";
-        echo "<td>" . $res['pictures'] . "</td>";
-        echo "<th>Precio</th>";
-        echo "<td>" .$res['price']. "</td>";
+        echo "<br><h1>" . $res['name'] . "</h1></td>";
+        echo "<br></br>";
+        echo "<td><br><img src='img/fuera_de_stock.jpg'></br><br>" .$res['price']. "$</br></td>";
         echo "</tr>";
-        echo "</table>";
+        echo "</table></button></div>";
     }
 ?>
+</div>
