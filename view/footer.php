@@ -1,1 +1,1 @@
-<p>jajajaj</p>
+<h1>*insertar logo SIBUS*&copy; SIBUSTech&reg; Todos los derechos reservados.</h1>

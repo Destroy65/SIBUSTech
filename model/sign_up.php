@@ -17,7 +17,7 @@
 
     function sign_up($conn)
     {   
-        $err = false;
+        $err = 'n';
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
             $name = $_POST['name'];
             $surname = $_POST['surname'];
@@ -34,7 +34,7 @@
             $sql2 = username_search($conn, $username);
             if($sql==true || $sql2 == true)
             {
-                $err = true;
+                $err = 'i';
             }
             else
             {
@@ -50,9 +50,15 @@
                 $consulta->bindParam(':city', $city);
                 $consulta->bindParam(':country', $country);
                 $consulta->execute();
+                $err = 'p';
+                $consulta = $conn->prepare("SELECT id FROM users WHERE username = :username");
+                $consulta->bindParam(':username', $username);
+                $consulta->execute();
+                $result = $consulta->fetchAll(PDO::FETCH_ASSOC);
+                $_SESSION['user_id'] = $result[0]['id'];
+                $_SESSION['username'] = $username;
             }
-            return $err;
         }
-        return true;
+        return $err;
     }
 ?>

@@ -1,8 +1,10 @@
 <?php
-    require_once __DIR__."/base_url_config.html";
-    $action = $_GET['action'] ?? null;
-    $logged = $_GET['logged'] ?? null;
-    switch($action){
+    session_start();
+    require_once __DIR__."/base_url_config.php";
+    $_GET['action'] = $_GET['action'] ?? 'main';
+    $_GET['q'] = $_GET['q'] ?? 1;
+    $_SESSION['logged'] = $_SESSION['logged'] ?? false;
+    switch($_GET['action']){
         case 'sign_up':
             require __DIR__."/resource_sign_up.php";
             break;

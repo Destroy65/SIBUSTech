@@ -1,10 +1,10 @@
 <hmtl>
 <div id="error">
-    <?php if($err == true){
+    <?php if($err == 'i'){
         echo "<p>Ya existe una cuenta con este correo electrónico y/o nombre de usuario</p>";
     }?>
 </div>
-<form action="" onsubmit="return validateForm();" method="post">
+<form action="" method="post">
         <div class="sign_up">
             <h1>Sign Up</h1>
             <p>Please fill in this form to create an account.</p>
@@ -47,6 +47,4 @@
             </div>
         </div>
     </form>
-    <div id="warn">
-    </div>
 </html>

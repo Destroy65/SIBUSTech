@@ -6,7 +6,8 @@
     $err = login($conn);
     if(!$err){
         $conn = null;
-        header("Location: ".$_SERVER['PHP_SELF']."?action=0&logged=true");
+        $_SESSION['logged'] = true;
+        header("Location: ".$_SERVER['PHP_SELF']."?action=0", TRUE, 301);
         exit();
     }
 
