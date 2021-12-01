@@ -1,27 +1,21 @@
-function showProducts(str) {
-    if (str == "") {
-      document.getElementById("productsList").innerHTML = "";
-    }
-    const xhttp = new XMLHttpRequest();
-    xhttp.onload = function() {
-        document.getElementById("productsList").innerHTML = xhttp.responseText;
+$(document).ready(function(){
+  $(document).on("click", ".categories", function(){
+    $.ajax({url: "/controller/products.php", data: {q: this.value}, success: function(result){
+      $("#productsList").html(result);
+    }});
+  });
+  $(document).on("click", ".products", function(){
+    $.ajax({url: "/controller/detailProduct.php", data: {p: this.value}, success: function(result){
+      $("#productsList").html(result);
+    }})
+  })
+});
 
-    }
-    xhttp.open("GET", "controller/products.php?q="+str);
-    xhttp.send();
-    return false;
-}
-
-function detailProduct(str) {
-  if (str == "") {
-    document.getElementById("interior").innerHTML = "";
-  }
-  const xhttp = new XMLHttpRequest();
-  xhttp.onload = function() {
-      document.getElementById("interior").innerHTML = xhttp.responseText;
-
-  }
-  xhttp.open("GET", "controller/detailProduct.php?p="+str);
-  xhttp.send();
-  return false;
-}
+$(document).ready(function(){
+  $("#a_button").click(function(){
+    if($("#a_menu").css("display") == "block")
+      $("#a_menu").css("display", "none");
+    else
+      $("#a_menu").css("display", "block");
+  })
+})

@@ -1,9 +1,8 @@
 .layout{
     display: grid;
-    background-color: lightgray;
+    background-color: black;
+    color: white;
     column-gap: 5px;
-    row-gap: 5px;
-    padding: 5px;
     grid-template-areas: 
         'top_menu'
         'body'
@@ -12,7 +11,8 @@
 }
 #body{
     display: grid;
-    background-color: blue;
+    background-color: black;
+    color: white;
     vertical-align: middle;
     column-gap: 5px;
     row-gap: 5px;
@@ -22,38 +22,46 @@
 }
 .top_menu{
     display: grid;
-    background-color: blueviolet;
+    background-color: black;
     vertical-align: middle;
+    border-right: 10px;
+    border-left: 10px;
     bottom: 0%;
     grid-template-areas: 
         'mainLogo  topnav topnav profile';
 }
 nav{
     text-align: center;
-    vertical-align:bottom;
+    vertical-align:middle;
     padding: 5px;
 }
 #profile{
     text-align: right;
+    border-right: 10px;
+    border-left: 10px;
 }
 #categoriesList{
-    background-color: chartreuse;
+    background-color: black;
     vertical-align: middle;
     padding: 5px;
     column-gap: 5px;
     row-gap: 5px;
 }
 #productsList{
-    background-color: coral;
+    background-color: black;
     padding: 5px;
     column-gap: 5px;
     row-gap: 5px;
+    color:white;
 }
 #mainLogo{
     align-items: center;
+    border-right: 10px;
+    border-left: 10px;
 }
 footer{
-    background-color: lightpink;
+    background-color: black;
+    color: white;
 }
 #log_menu {
     display: none; /* Hidden by default */
@@ -82,13 +90,19 @@ footer{
     cursor: pointer;
 }
 button {
-    background-color: #04AA6D;
+    background-color: red;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
     cursor: pointer;
     width: 100%;
+}
+button.products{
+    background-color: black;
+    text-align: left;
+    padding-left: 10px;
+    
 }
 button:hover {
     opacity: 0.8;

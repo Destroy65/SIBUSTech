@@ -1,5 +1,5 @@
 <?php foreach($categories as $category): ?>
-    <button type="button" onclick="return showProducts('<?php echo $category['id']?>');"><?php echo $category['name'] ?></button>
+    <button type="button" class="categories" value="<?php echo $category['id']; ?>"><?php echo $category['name'] ?></button>
 <?php endforeach ?>
 
 

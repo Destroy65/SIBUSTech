@@ -3,5 +3,6 @@
     include __DIR__."/../model/products.php";
     $conn = DBconnect();
     $aux = load_product($conn);
+    $conn = null;
     include __DIR__."/../view/products.php";
 ?>

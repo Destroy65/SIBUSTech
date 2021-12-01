@@ -10,6 +10,7 @@
         header("Location: ".$_SERVER['PHP_SELF']."?action=0", TRUE, 301);
         exit();
     }
+    $conn = null;
 
     include __DIR__."/../view/log_menu.php"; 
 ?>

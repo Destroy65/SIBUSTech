@@ -1,6 +1,5 @@
 <?php
     session_start();
-    require_once __DIR__."/base_url_config.php";
     $_GET['action'] = $_GET['action'] ?? 'main';
     $_GET['q'] = $_GET['q'] ?? 1;
     $_GET['p'] = $_GET['p'] ?? null;
