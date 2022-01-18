@@ -24,17 +24,20 @@ $(document).ready(function(){
   });
 });
 $(document).ready(function(){
+  
   $(document).on("click", "#cart_button", function(){
     $.ajax({url: "index.php?action=addCart", data: {q: document.getElementById("quantity").value, p: this.value}, success: function(result){
       $(".top_menu").html(result);
     }});
   });
+  
   $(document).on("click", "#deleteCart", function(){
     $.ajax({url: "index.php?action=deleteCart", success: function(result){
       $("#cart").html("");
       $("#a_menu").html(result);
     }});
   });
+
   $(document).on("click", ".deleteItem", function(){
     $.ajax({url: "index.php?action=deleteItem", data: {p: this.value}, success: function(result){
       var aux = result.split("~");
@@ -43,6 +46,8 @@ $(document).ready(function(){
     }});
   });
 });
+
+
 
 
 

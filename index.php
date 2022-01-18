@@ -4,8 +4,7 @@
     $_GET['p'] = $_GET['p'] ?? null;
     $_GET['q'] = $_GET['q'] ?? 0;
     $_SESSION['logged'] = $_SESSION['logged'] ?? false;
-    $_SESSION['n_items'] = $_SESSION['n_items'] ?? 0;
-    $_SESSION['price'] = $_SESSION['price'] ?? 0;
+    $_SESSION['cart'] = $_SESSION['cart'] ?? [];
     switch($_GET['action']){
         case 'sign_up':
             require __DIR__."/resource_sign_up.php";

@@ -16,14 +16,6 @@
         if($user_id != 0){
             $_SESSION['user_id'] = $user_id;
             $_SESSION['logged'] = true;
-            $aux = getUserCart($user_id, $conn)[0];
-            $_SESSION['price'] = $aux['price'];
-            if(isset($aux)){
-                $aux2 = getCartItems($aux['id'], $conn);
-                foreach($aux2 as $i){
-                    $_SESSION['n_items'] += $i['quantity'];
-                }
-            }
             $conn = null;
             header("Location: ".$_SERVER['PHP_SELF']."?action=0");
             exit();

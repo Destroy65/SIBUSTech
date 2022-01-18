@@ -32,7 +32,7 @@
             <input type="text" placeholder="Poblacion" name="city" maxlength="30" required>
 
             <label for="postal"><b>Codigo Postal</b></label>
-            <input type="int" placeholder="Codigo Postal" name="postal" pattern="((0[1-9]|5[0-2])|[1-4][0-9])[0-9]{3}" id="postal" required>
+            <input type="number" placeholder="Codigo Postal" name="postal" maxlength="5" id="postal" required>
 
             <label for="country"><b>Pais</b></label>
             <input type="text" placeholder="Pais" name="country" maxlength="30" required>

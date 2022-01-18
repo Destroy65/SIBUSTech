@@ -27,11 +27,6 @@
         $city = $filters['city'];
         $country = $filters['country'];
         
-        if($name == null || $surname == null || $password == null || $email == null || $phone == null || $address == null || $postal_code == null || $city == null || $country==null || log10(intval($postal_code, 10)+1) > 5){
-            echo "<script>alert('Problema con el formulario');</script>";
-            exit();
-        }
-            
         $conn = DBconnect();
         $signed = sign_up($conn, $name, $surname, $password, $phone, $email, $address, $postal_code, $city, $country);
         $conn = null;

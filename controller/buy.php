@@ -4,15 +4,24 @@
     $conn = DBconnect();
     if(isset($_SESSION['user_id'])){
         $user_id = $_SESSION['user_id'];
-        $user_cart = getUserCart($user_id, $conn);
-        if(isset($user_cart[0])){
-            $cart_items = getCartItems($user_cart[0]['id'], $conn);
-        }
         $datetime = date("Y-m-d H:i:s");
-        buy($user_id, $datetime, $conn);
-        $_SESSION['price'] = 0;
-        $_SESSION['n_items'] = 0;
+        $aux = $_SESSION['cart'];
+        $total = 0;
+        foreach($aux as $ky=>$ci){
+            $total += $ci[1] * $ci[2];
+        }
+        buy($user_id, $total, $datetime, $conn);
+        $cart_id = getUserCart($user_id, $conn)[0]['id'];
+        foreach($aux as $ky=>$ci){
+            $product_id = $ky;
+            $product_name = $ci[0];
+            $quantity = $ci[1];
+            $price = $ci[2];
+            addCartItem($cart_id, $product_id, $product_name, $quantity, $price, $conn);
+        }
+        finishBuy($cart_id, $conn);
         include __DIR__."/../view/buy.php";
+        deleteCart();
     }
     $conn = null;
 ?>
