@@ -14,23 +14,12 @@
     </header>
     <div>
         <header>
-          <p> Your Profile </p>
+          <p> Edit Your Profile </p>
         </header>
         <div>
-          <?php require __DIR__."/controller/account.php"; ?>
+          <?php require __DIR__."/controller/edit_account.php"; ?>
         </div>
-        <div>
-          <a href="<?php $_SERVER['PHP_SELF'] ?>?action=edit_account"><button> Edit Profile </button></a>
-        </div>
-    </div> 
-    <div>
-      <header>
-        <p> Your commands </p>
-      </header>
-      <div>
-        <?php require __DIR__."/controller/commands.php"; ?>
-      </div>
-    </div>
+    </div>  
     <footer style="grid-area: footer">
       <?php include __DIR__."/controller/footer.php";?>
     </footer>

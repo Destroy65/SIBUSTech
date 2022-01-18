@@ -13,7 +13,16 @@
       <?php require __DIR__."/controller/top_menu.php"; ?>
     </header>
     <div>
-        esto es el carrito
+        <header>
+          <p>Your cart</p>
+        </header>
+        <div id="cart">
+          <?php require __DIR__."/controller/cart.php"; ?>
+        </div>
+        <div>
+          <button type="button" id="deleteCart">Delete Cart</button>
+          <a href="<?php echo $_SERVER['PHP_SELF'] ?>?action=buy"><button type="button" id="buy">Buy</button></a>
+        </div>
     </div>  
   </body>
 </html>

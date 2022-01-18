@@ -5,11 +5,11 @@
         </div>
 
         <div class="container">
-        <label for="username"><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="username" required>
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="email" required>
 
         <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" required>
+        <input type="password" placeholder="Enter Password" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
             
         <button type="submit">Login</button>
         <?php echo "<a href='".$_SERVER['PHP_SELF']."?action=sign_up'><button type='button'>Sign Up</button></a>" ?>

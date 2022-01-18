@@ -1,25 +1,16 @@
 <?php
-
-    function login($conn)
+    function login($conn, $email, $psw)
     {
-        if($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $username = $_POST['username'];
-            $psw = $_POST['psw'];
-            $consulta = $conn->prepare("SELECT id, password FROM users WHERE username = :username");
-            $consulta->bindParam(":username", $username);
-            $consulta->execute();
-            $result = $consulta->fetchAll(PDO::FETCH_ASSOC);
+        $consulta = $conn->prepare("SELECT id, password FROM users WHERE email = :email");
+        $consulta->bindParam(":email", $email);
+        $consulta->execute();
+        $result = $consulta->fetchAll(PDO::FETCH_ASSOC);
+        if(isset($result[0])){ 
             if(password_verify($psw, $result[0]['password']))
             {
-                $_SESSION['user_id'] = $result[0]['id'];
-                $_SESSION['username'] = $username;
-                return false;
-            }
-            else
-            {
-                return true;
+                return $result[0]['id'];
             }
         }
-        return true;
+        return 0;
     }
 ?>

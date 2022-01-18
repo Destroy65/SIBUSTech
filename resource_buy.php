@@ -2,7 +2,7 @@
 <html lang="es">
   <head>
       <meta charset="utf-8"/>
-      <title>Account</title>        
+      <title>Cart</title>        
       <meta name="author" content="SIBUS S.L.">
       <link rel="stylesheet" type="text/css" href="css/style.css">
       <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
@@ -14,25 +14,14 @@
     </header>
     <div>
         <header>
-          <p> Your Profile </p>
+          <p>Your purchase</p>
         </header>
-        <div>
-          <?php require __DIR__."/controller/account.php"; ?>
+        <div id="purchase">
+          <?php require __DIR__."/controller/buy.php"; ?>
         </div>
         <div>
-          <a href="<?php $_SERVER['PHP_SELF'] ?>?action=edit_account"><button> Edit Profile </button></a>
+          <a href="<?php echo $_SERVER['PHP_SELF'] ?>?action=main"><button type="button" id="main">Back to main page</button></a>
         </div>
-    </div> 
-    <div>
-      <header>
-        <p> Your commands </p>
-      </header>
-      <div>
-        <?php require __DIR__."/controller/commands.php"; ?>
-      </div>
-    </div>
-    <footer style="grid-area: footer">
-      <?php include __DIR__."/controller/footer.php";?>
-    </footer>
+    </div>  
   </body>
 </html>

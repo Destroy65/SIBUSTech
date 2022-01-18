@@ -9,6 +9,9 @@
         'body'
         'footer';
 }
+table, th, td {
+    border:1px solid white;
+}
 #body{
     display: grid;
     background-color: black;
@@ -62,6 +65,10 @@ nav{
 footer{
     background-color: black;
     color: white;
+}
+#a_menu{
+    color: red;
+    font-size: 30px;
 }
 #log_menu {
     display: none; /* Hidden by default */
@@ -147,7 +154,7 @@ span.psw {
     from {transform: scale(0)} 
     to {transform: scale(1)}
 }
-input[type=text], input[type=password] {
+input[type=text], input[type=password], input[type=phone] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
