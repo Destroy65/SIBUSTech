@@ -5,6 +5,8 @@
     $_GET['q'] = $_GET['q'] ?? 0;
     $_SESSION['logged'] = $_SESSION['logged'] ?? false;
     $_SESSION['cart'] = $_SESSION['cart'] ?? [];
+    $_SESSION['user_img'] = $_SESSION['user_img'] ?? "/img/account.png";
+    $usersImgPath = __DIR__."/img/users/";
     switch($_GET['action']){
         case 'sign_up':
             require __DIR__."/resource_sign_up.php";

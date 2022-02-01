@@ -13,4 +13,13 @@
         }
         return 0;
     }
+
+    function getUserImg($conn, $user_id)
+    {
+        $consulta = $conn->prepare("SELECT img FROM users WHERE id = :user_id");
+        $consulta->bindParam(":user_id", $user_id);
+        $consulta->execute();
+        $img = $consulta->fetchAll(PDO::FETCH_ASSOC);
+        return $img[0]['img'];
+    }
 ?>

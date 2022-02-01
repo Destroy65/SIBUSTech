@@ -12,7 +12,7 @@
         return ($user_data);
     }
 
-    function editUserData($user_id, $conn, $name, $surname, $password, $phone, $address, $postal_code, $city, $country)
+    function editUserData($user_id, $conn, $name, $surname, $password, $phone, $address, $postal_code, $city, $country, $img)
     {
         try{
             if($name != null){
@@ -59,9 +59,15 @@
             }
             if($password != null){
                 $psw = password_hash($password, PASSWORD_DEFAULT);
-                $consulta->bindparam(":user_id", $user_id);
                 $consulta = $conn->prepare("UPDATE users SET password=:psw WHERE id = :user_id");
+                $consulta->bindparam(":user_id", $user_id);
                 $consulta->bindParam(":psw", $psw);
+                $consulta->execute();
+            }
+            if($img != null){
+                $consulta = $conn->prepare("UPDATE users SET img=:img WHERE id = :user_id");
+                $consulta->bindparam(":user_id", $user_id);
+                $consulta->bindParam(":img", $img);
                 $consulta->execute();
             }
 

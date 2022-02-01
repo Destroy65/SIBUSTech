@@ -1,3 +1,4 @@
+<?php echo "<img src='".$_SESSION['user_img']."'  alt='account' width=100px'>" ?>
 <p> <?php echo htmlentities($user_data[0]['name'], ENT_QUOTES | ENT_HTML5, 'UTF-8') ?> </p>
 <p> <?php echo htmlentities($user_data[0]['surname'], ENT_QUOTES | ENT_HTML5, 'UTF-8') ?> </p>
 <p> <?php echo htmlentities($user_data[0]['email'], ENT_QUOTES | ENT_HTML5, 'UTF-8') ?> </p>

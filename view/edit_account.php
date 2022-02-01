@@ -1,5 +1,5 @@
 <hmtl>
-    <form action="" method="post">
+    <form action="" method="post" enctype="multipart/form-data">
         <div class="edit_account">
             <label for="name"><b>Nombre</b></label>
             <input type="text" placeholder=<?php echo htmlentities($user_data[0]['name'], ENT_QUOTES | ENT_HTML5, 'UTF-8') ?> pattern="^[^ ][\w.ñÑ ]*" name="name">
@@ -24,6 +24,9 @@
 
             <label for="country"><b>Pais</b></label>
             <input type="text" placeholder=<?php echo htmlentities($user_data[0]['country'], ENT_QUOTES | ENT_HTML5, 'UTF-8') ?> maxlength="30" name="country">
+
+            <label for="profile_image"><b>User Image</b></label>
+            <input type="file" name="profile_image">
 
             <button type="submit" class="signupbtn">Submit</button>
         </div>

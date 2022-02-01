@@ -16,6 +16,7 @@
         if($user_id != 0){
             $_SESSION['user_id'] = $user_id;
             $_SESSION['logged'] = true;
+            $_SESSION['user_img'] = "/img/users/".getUserImg($conn, $user_id);
             $conn = null;
             header("Location: ".$_SERVER['PHP_SELF']."?action=0");
             exit();
